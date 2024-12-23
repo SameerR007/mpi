@@ -4,3 +4,4 @@
 patents_not_found.csv
 patents_without_embeddings.csv
 patents_without_publicationdate.csv
+8similar_patents_with_techclasses.csv

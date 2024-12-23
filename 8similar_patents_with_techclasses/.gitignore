@@ -1,0 +1,4 @@
+.env
+7similar_patents_less_than_date.csv
+8similar_patents_with_techclasses.csv
+ipc_unique.dta

@@ -23,3 +23,6 @@ patents_ not_found.csv - keys of patents which were not found by logic mill serv
 patents_without_embeddings.csv - keys of patents for which embeddings were not found
 patents_without_publicationdate.csv - keys of patents for which publication dates were not found
 
+8similar_patents_with_techclasses.csv
+columns : same as 7similar_patents_less_than_date.csv with an added column mainarea34 denoting the tech class
+
