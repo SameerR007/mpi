@@ -18,3 +18,4 @@ applnids_notin_tls203_appln_abstr.csv
 patents_not_en.csv
 14embeddings.pkl
 14embeddings.csv
+4similar_patents_byLogicMill.csv
