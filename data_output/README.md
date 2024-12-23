@@ -1,48 +1,118 @@
-1sentence_transformers.csv
-Columns: 
-Query - focal datapoint
-Pos - set of positive datapoints
-neg - set of negative datapoints
-avg_sim_pos - average of similarities between query and its all positive documents
-avg_sim_neg - average of similarities between query and its all negative documents
-Result - True if for a query avg_sim_pos > avg_sim_neg
+# Data Folder
 
-3keys_for_logicmill.csv
-Columns : docdb_family_id, pat_publn_id, earliest_filing_date, appln_auth, granted, publn_auth, publn_nr, publn_kind, key
-Major column - key (that need to passed into logic mill)
+This folder contains various datasets generated and used throughout the project. Below is an overview of each file and its structure:
 
-4similar_patents_byLogicMill.csv
-Columns : docdb_family_id, key, similar_patents, similar_patents_family, num_unique_elements
-similar_patents_family - family ids of similar patents
-num_unique_elements - represent how many unique family ids are there. If this is less than 1000 for any representative patent we need to rety with more similar patents
+---
 
-7similar_patents_less_than_date.csv
-columns : same as 4similar_patents_byLogicMill.csv but with patents with less than publication dates
+### **1sentence_transformers.csv**
+**Columns:**
+- **Query**: Focal datapoint.
+- **Pos**: Set of positive datapoints.
+- **Neg**: Set of negative datapoints.
+- **Avg_sim_pos**: Average of similarities between the query and all its positive documents.
+- **Avg_sim_neg**: Average of similarities between the query and all its negative documents.
+- **Result**: True if for a query `Avg_sim_pos > Avg_sim_neg`.
 
-patents_ not_found.csv - keys of patents which were not found by logic mill server
-patents_without_embeddings.csv - keys of patents for which embeddings were not found
-patents_without_publicationdate.csv - keys of patents for which publication dates were not found
+---
 
-8similar_patents_with_techclasses.csv
-columns : same as 7similar_patents_less_than_date.csv with an added column mainarea34 denoting the tech class
+### **3keys_for_logicmill.csv**
+**Columns:**
+- **docdb_family_id**
+- **pat_publn_id**
+- **earliest_filing_date**
+- **appln_auth**
+- **granted**
+- **publn_auth**
+- **publn_nr**
+- **publn_kind**
+- **key**: The key to be passed into LogicMill.
 
-9similar_patents_less_than1000.csv
-subset of 8similar_patents_with_techclasses.csv with all patents for which number of unique family ids is less than 1000
+---
 
-dataconcat1.csv and dataconcat2.csv - data for which trying with a larger k to get more than 1000 similar unique family ids patents was successful. And these have to be merged with 8similar_patents_with_techclasses.csv
+### **4similar_patents_byLogicMill.csv**
+**Columns:**
+- **docdb_family_id**
+- **key**
+- **similar_patents**
+- **similar_patents_family**: Family IDs of similar patents.
+- **num_unique_elements**: Number of unique family IDs. If this is less than 1,000 for any representative patent, we need to retry with more similar patents.
 
-10merged_data.csv - merged data 8similar_patents_with_techclasses.csv with dataconcat1.csv and dataconcat2.csv
-data204.csv - same as 9similar_patents_less_than1000.csv (corrected by reset index)
+---
 
-11
-data_with_citations.csv - 10merged_data.csv with an additional column with cited patents
-data_no_citations.csv - patents in 10merged_data.csv for which citations were not found in sql database
+### **7similar_patents_less_than_date.csv**
+**Columns:**
+- Same as `4similar_patents_byLogicMill.csv` but includes only patents with publication dates earlier than the given dates.
 
-12english_abstract_title.csv - columns : key, appln_id, appln_title, appln_abstract
-applnids_notin_tls203_appln_abstr.csv - columns : key, appln_id
-patents_not_en_abstract.csv - columns : key, appln_id
+### **patents_not_found.csv**
+**Description**: Contains keys of patents not found by the LogicMill server.
 
-13handling_non_english.csv - subset of applnids_notin_tls203_appln_abstr.csv and patents_not_en_abstract.csv for which another patent of same family with english abstract and title was found.
-patents_not_en.csv - subset of applnids_notin_tls203_appln_abstr.csv and patents_not_en_abstract.csv for which no patent of same family with english abstract and title was found.
+### **patents_without_embeddings.csv**
+**Description**: Contains keys of patents for which embeddings were not found.
 
-14embeddings.pkl and 14embeddings.csv - embeddings of patents with english abstract and title.
+### **patents_without_publicationdate.csv**
+**Description**: Contains keys of patents for which publication dates were not found.
+
+---
+
+### **8similar_patents_with_techclasses.csv**
+**Columns:**
+- Same as `7similar_patents_less_than_date.csv`, with an added column:
+  - **mainarea34**: Denotes the technology class.
+
+---
+
+### **9similar_patents_less_than1000.csv**
+**Description**: A subset of `8similar_patents_with_techclasses.csv` with all patents for which the number of unique family IDs is less than 1,000.
+
+### **dataconcat1.csv** and **dataconcat2.csv**
+**Description**: Contain data for patents for which attempts with a larger `k` successfully retrieved more than 1,000 unique similar family IDs. These need to be merged with `8similar_patents_with_techclasses.csv`.
+
+---
+
+### **10merged_data.csv**
+**Description**: Merged data from `8similar_patents_with_techclasses.csv`, `dataconcat1.csv`, and `dataconcat2.csv`.
+
+---
+
+### **data204.csv**
+**Description**: Same as `9similar_patents_less_than1000.csv` but corrected with a reset index.
+
+---
+
+### **11data_with_citations.csv**
+**Description**: Contains data from `10merged_data.csv` with an additional column for cited patents.
+
+### **data_no_citations.csv**
+**Description**: subset of `10merged_data.csv` for which citations were not found in the SQL database.
+
+---
+
+### **12english_abstract_title.csv**
+**Columns:**
+- **key**
+- **appln_id**
+- **appln_title**
+- **appln_abstract**
+
+### **applnids_notin_tls203_appln_abstr.csv**
+**Columns:**
+- **key**
+- **appln_id**
+
+### **patents_not_en_abstract.csv**
+**Columns:**
+- **key**
+- **appln_id**
+
+---
+
+### **13handling_non_english.csv**
+**Description**: A subset of `applnids_notin_tls203_appln_abstr.csv` and `patents_not_en_abstract.csv` for which another patent from the same family with an English abstract and title was found.
+
+### **patents_not_en.csv**
+**Description**: A subset of `applnids_notin_tls203_appln_abstr.csv` and `patents_not_en_abstract.csv` for which no patent from the same family with an English abstract and title was found.
+
+---
+
+### **14embeddings.pkl** and **14embeddings.csv**
+**Description**: Contain embeddings of patents with English abstracts and titles.
