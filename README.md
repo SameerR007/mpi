@@ -1,30 +1,60 @@
-# mpi
+# Max Planck Institute - Patent retrieval
 
-1. 1sentence-transformers : Playing around with sentence transformers. Taking a dataset with query and its corresponding positive and negative documents. Calculating 
-the similarity between the embeddings of query and positive documents and query and negative documents.
+The project primarily involves working with patents, embeddings, databases, and tools like LogicMill and Sentence Transformers to process, analyze, and enhance patent data.
 
-2. 2patstat_pat_no(introduction) : 2patstat_pat_no.csv contains the family ids of representative patents. Fetch similar patents with the given family ids from patstat_s24.tls201_appln database using sql query.
+## Project Overview
 
-3. 3keys_for_logicmill : for each of the representative patent in patstat_pat_no.csv fetch publn_auth, publn_nr and publn_kind to form key that can be passed into logic mill.
+This project aims to explore patents using machine learning and database queries, enabling better retrieval, embedding, and analysis of patent-related data. The repository includes scripts, and methodologies used to generate insights and analyze patent similarities.
 
-4. 4similar_patents_byLogicMill : Storing similar patents with respect to the representative patents and storing the family ids of these similar patents.
+## Contents
 
-5. 5logicmill_introduction(part1) : Getting to know about logicmill
+The work is divided into 14 modules, each focusing on a specific aspect of the project:
 
-6. 6logicmill_introduction(part2) : extension of 5
+### 1. **sentence-transformers**
+- Experimenting with sentence transformers.
+- Calculating similarities between query embeddings and their corresponding positive and negative documents using a dataset with queries.
 
-7. 7similar_patents_less_than_date : corrected data produced in 4similar_patents_byLogicMill by taking only for dates less than publication dates.
+### 2. **patstat_pat_no (introduction)**
+- The `2patstat_pat_no.csv` file contains family IDs of representative patents.
+- A SQL query was used to fetch similar patents from the `patstat_s24.tls201_appln` database.
 
-8. 8similar_patents_with_techclasses : adding tech class column to the data produced in 7similar_patents_less_than_date.
+### 3. **keys_for_logicmill**
+- For each representative patent in `2patstat_pat_no.csv`, retrieved `publn_auth`, `publn_nr`, and `publn_kind` to create keys for LogicMill.
 
-9. 9similar_patents_less_than1000 : first checked if octamine has contrained patents wrt tech class or not. After confirming that there isnt any constrain in tech class for patents, retired to get similar patents with larger k for patents which we had unique similar patents less than 1000. At the end we have the patents for which no amount of k could get us more than 1000 unique patents.
+### 4. **similar_patents_byLogicMill**
+- Retrieved similar patents for the representative patents and stored the family IDs of these similar patents.
 
-10. 10merged_data : modifying 8similar_patents_with_techclasses dataset such that number of unique family ids is greater than 1000 for all the patents. Patents for which number of unique family ids greater than 1000 was not achieved has been stored in a separate dataset for manual embedding. 
+### 5. **logicmill_introduction (part 1)**
+- Initial exploration and understanding of LogicMill.
 
-11. 11data_with_citations - for the patents in 10merged_data.csv get the cited patents from sql database as these cited patents are the ground truth labels which should be closely related. Add one more column containg all the cited patent for a given representative patent. Also the patents for which the citations were not found are stored in data_no_citations.csv
+### 6. **logicmill_introduction (part 2)**
+- Continuation of the exploration and understanding of LogicMill.
 
-12. 12english_abstract_title - for the patents for which logic mill was not able to generate embedding we extract their abstract and title from sql database for manual embedding. We store the patents with their abstract and title. Also we store the patents which were not found in sql database or for which either abstract or title was not in english.
+### 7. **similar_patents_less_than_date**
+- Refined the dataset from `similar_patents_byLogicMill` to include only patents with publication dates earlier than the given dates.
 
-13. 13handling_non_english - for the patents with non english abstracts and title we take another patent with english abstract and title from the same family.
+### 8. **similar_patents_with_techclasses**
+- Added a technology class column to the refined dataset from `similar_patents_less_than_date`.
 
-14. 14embedding - computing manual embeddings for patents with english abstract and title using sentence transformer.
+### 9. **similar_patents_less_than1000**
+- Investigated patents to ensure that no constraints were imposed by technology classes when using Octamine. 
+- Attempted to retrieve more similar patents with larger values of `k` for patents with fewer than 1,000 unique similar patents. The remaining patents (fewer than 1,000 unique matches) were flagged for manual embedding.
+
+### 10. **merged_data**
+- Modified the dataset from `similar_patents_with_techclasses` to ensure all patents have more than 1,000 unique family IDs.
+- Stored patents with fewer than 1,000 unique family IDs for manual embedding.
+
+### 11. **data_with_citations**
+- Retrieved cited patents for patents in `10merged_data.csv` from the SQL database. These cited patents serve as ground truth labels for close relationships.
+- Added a column containing all cited patents for each representative patent.
+- Stored patents without citations in `data_no_citations.csv`.
+
+### 12. **english_abstract_title**
+- For patents that LogicMill couldn't generate embeddings for, extracted their abstract and title from the SQL database for manual embedding.
+- Stored patents with non-English abstracts and titles separately.
+
+### 13. **handling_non_english**
+- For patents with non-English abstracts and titles, replaced them with another patent from the same family that had English abstracts and titles.
+
+### 14. **embedding**
+- Computed manual embeddings for patents with English abstracts and titles using Sentence Transformers.
