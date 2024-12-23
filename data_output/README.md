@@ -15,3 +15,11 @@ Major column - key (that need to passed into logic mill)
 Columns : docdb_family_id, key, similar_patents, similar_patents_family, num_unique_elements
 similar_patents_family - family ids of similar patents
 num_unique_elements - represent how many unique family ids are there. If this is less than 1000 for any representative patent we need to rety with more similar patents
+
+7similar_patents_less_than_date.csv
+columns : same as 4similar_patents_byLogicMill.csv but with patents with less than publication dates
+
+patents_ not_found.csv - keys of patents which were not found by logic mill server
+patents_without_embeddings.csv - keys of patents for which embeddings were not found
+patents_without_publicationdate.csv - keys of patents for which publication dates were not found
+
