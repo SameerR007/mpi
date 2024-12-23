@@ -32,6 +32,7 @@ The work is divided into 14 modules, each focusing on a specific aspect of the p
 
 ### 7. **similar_patents_less_than_date**
 - Refined the dataset from `similar_patents_byLogicMill` to include only patents with publication dates earlier than the given dates.
+- patents which were not found in logic mill server were stored in three datasets - `patents_not_found.csv`, `patents_without_embeddings.csv`, `patents_without_publicationdate.csv`.
 
 ### 8. **similar_patents_with_techclasses**
 - Added a technology class column to the refined dataset from `similar_patents_less_than_date`.
@@ -50,7 +51,7 @@ The work is divided into 14 modules, each focusing on a specific aspect of the p
 - Stored patents without citations in `data_no_citations.csv`.
 
 ### 12. **english_abstract_title**
-- For patents that LogicMill couldn't generate embeddings for, extracted their abstract and title from the SQL database for manual embedding.
+- For patents that LogicMill couldn't generate embeddings (`stored in patents_not_found.csv` and `patents_without_embeddings.csv`) for, extracted their abstract and title from the SQL database for manual embedding.
 - Stored patents with non-English abstracts and titles separately.
 
 ### 13. **handling_non_english**
