@@ -9,6 +9,10 @@ the similarity between the embeddings of query and positive documents and query 
 
 4. 4similar_patents_byLogicMill : Storing similar patents with respect to the representative patents and storing the family ids of these similar patents.
 
+5. 5logicmill_introduction(part1) : Getting to know about logicmill
+
+6. 6logicmill_introduction(part2) : extension of 5
+
 5. 7similar_patents_less_than_date : corrected data produced in 4similar_patents_byLogicMill by taking only for dates less than publication dates.
 
 6. 8similar_patents_with_techclasses : adding tech class column to the data produced in 7similar_patents_less_than_date.
