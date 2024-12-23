@@ -28,3 +28,8 @@ columns : same as 7similar_patents_less_than_date.csv with an added column maina
 
 9similar_patents_less_than1000.csv
 subset of 8similar_patents_with_techclasses.csv with all patents for which number of unique family ids is less than 1000
+
+dataconcat1.csv and dataconcat2.csv - data for which trying with a larger k to get more than 1000 similar unique family ids patents was successful. And these have to be merged with 8similar_patents_with_techclasses.csv
+
+10merged_data.csv - merged data 8similar_patents_with_techclasses.csv with dataconcat1.csv and dataconcat2.csv
+data204.csv - same as 9similar_patents_less_than1000.csv (corrected by reset index)
