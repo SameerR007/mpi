@@ -44,3 +44,5 @@ patents_not_en_abstract.csv - columns : key, appln_id
 
 13handling_non_english.csv - subset of applnids_notin_tls203_appln_abstr.csv and patents_not_en_abstract.csv for which another patent of same family with english abstract and title was found.
 patents_not_en.csv - subset of applnids_notin_tls203_appln_abstr.csv and patents_not_en_abstract.csv for which no patent of same family with english abstract and title was found.
+
+14embeddings.pkl and 14embeddings.csv - embeddings of patents with english abstract and title.

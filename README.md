@@ -22,3 +22,5 @@ the similarity between the embeddings of query and positive documents and query 
 10. 12english_abstract_title - for the patents for which logic mill was not able to generate embedding we extract their abstract and title from sql database for manual embedding. We store the patents with their abstract and title. Also we store the patents which were not found in sql database or for which either abstract or title was not in english.
 
 11. 13handling_non_english - for the patents with non english abstracts and title we take another patent with english abstract and title from the same family.
+
+12. 14embedding - computing manual embeddings for patents with english abstract and title using sentence transformer.

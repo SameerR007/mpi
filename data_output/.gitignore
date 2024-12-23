@@ -17,3 +17,5 @@ patents_not_en_abstract.csv
 applnids_notin_tls203_appln_abstr.csv
 13handling_non_english.csv
 patents_not_en.csv
+14embeddings.pkl
+14embeddings.csv
