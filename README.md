@@ -8,3 +8,7 @@ the similarity between the embeddings of query and positive documents and query 
 3. 3keys_for_logicmill : for each of the representative patent in patstat_pat_no.csv fetch publn_auth, publn_nr and publn_kind to form key that can be passed into logic mill.
 
 4. 4similar_patents_byLogicMill : Storing similar patents with respect to the representative patents and storing the family ids of these similar patents.
+
+5. 7similar_patents_less_than_date : corrected data produced in 4similar_patents_byLogicMill by taking only for dates less than publication dates.
+
+6. 8similar_patents_with_techclasses : adding tech class column to the data produced in 7similar_patents_less_than_date.
