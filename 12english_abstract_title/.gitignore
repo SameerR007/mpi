@@ -1,0 +1,6 @@
+.env
+applnids_notin_tls203_appln_abstr.csv
+patents_not_found.csv
+patents_without_embeddings.csv
+12english_abstract_title.csv
+patents_not_en_abstract.csv

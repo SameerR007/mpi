@@ -18,3 +18,5 @@ the similarity between the embeddings of query and positive documents and query 
 8. 10merged_data : modifying 8similar_patents_with_techclasses dataset such that number of unique family ids is greater than 1000 for all the patents. Patents for which number of unique family ids greater than 1000 was not achieved has been stored in a separate dataset for manual embedding. 
 
 9. 11data_with_citations - for the patents in 10merged_data.csv get the cited patents from sql database as these cited patents are the ground truth labels which should be closely related. Add one more column containg all the cited patent for a given representative patent. Also the patents for which the citations were not found are stored in data_no_citations.csv
+
+10. 12english_abstract_title - for the patents for which logic mill was not able to generate embedding we extract their abstract and title from sql database for manual embedding. We store the patents with their abstract and title. Also we discard the patents for which either abstract or title was not in english.

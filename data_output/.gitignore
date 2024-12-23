@@ -12,3 +12,6 @@ data204.csv
 10merged_data.csv
 data_no_citations.csv
 data_with_citations.csv
+12english_abstract_title.csv
+patents_not_en_abstract.csv
+applnids_notin_tls203_appln_abstr.csv

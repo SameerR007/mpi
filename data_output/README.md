@@ -38,3 +38,6 @@ data204.csv - same as 9similar_patents_less_than1000.csv (corrected by reset ind
 data_with_citations.csv - 10merged_data.csv with an additional column with cited patents
 data_no_citations.csv - patents in 10merged_data.csv for which citations were not found in sql database
 
+12english_abstract_title.csv - columns : key, appln_id, appln_title, appln_abstract
+applnids_notin_tls203_appln_abstr.csv - columns : key, appln_id
+patents_not_en_abstract.csv - columns : key, appln_id
