@@ -26,3 +26,5 @@ patents_without_publicationdate.csv - keys of patents for which publication date
 8similar_patents_with_techclasses.csv
 columns : same as 7similar_patents_less_than_date.csv with an added column mainarea34 denoting the tech class
 
+9similar_patents_less_than1000.csv
+subset of 8similar_patents_with_techclasses.csv with all patents for which number of unique family ids is less than 1000

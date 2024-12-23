@@ -12,3 +12,6 @@ the similarity between the embeddings of query and positive documents and query 
 5. 7similar_patents_less_than_date : corrected data produced in 4similar_patents_byLogicMill by taking only for dates less than publication dates.
 
 6. 8similar_patents_with_techclasses : adding tech class column to the data produced in 7similar_patents_less_than_date.
+
+7. 9similar_patents_less_than1000 : first checked if octamine has contrained patents wrt tech class or not. After confirming that there isnt any constrain in tech class for patents, retired to get similar patents with larger k for patents which we had unique similar patents less than 1000. At the end we have the patents for which no amount of k could get us more than 1000 unique patents.
+
