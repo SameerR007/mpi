@@ -19,4 +19,6 @@ the similarity between the embeddings of query and positive documents and query 
 
 9. 11data_with_citations - for the patents in 10merged_data.csv get the cited patents from sql database as these cited patents are the ground truth labels which should be closely related. Add one more column containg all the cited patent for a given representative patent. Also the patents for which the citations were not found are stored in data_no_citations.csv
 
-10. 12english_abstract_title - for the patents for which logic mill was not able to generate embedding we extract their abstract and title from sql database for manual embedding. We store the patents with their abstract and title. Also we discard the patents for which either abstract or title was not in english.
+10. 12english_abstract_title - for the patents for which logic mill was not able to generate embedding we extract their abstract and title from sql database for manual embedding. We store the patents with their abstract and title. Also we store the patents which were not found in sql database or for which either abstract or title was not in english.
+
+11. 13handling_non_english - for the patents with non english abstracts and title we take another patent with english abstract and title from the same family.

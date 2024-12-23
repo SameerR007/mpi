@@ -41,3 +41,6 @@ data_no_citations.csv - patents in 10merged_data.csv for which citations were no
 12english_abstract_title.csv - columns : key, appln_id, appln_title, appln_abstract
 applnids_notin_tls203_appln_abstr.csv - columns : key, appln_id
 patents_not_en_abstract.csv - columns : key, appln_id
+
+13handling_non_english.csv - subset of applnids_notin_tls203_appln_abstr.csv and patents_not_en_abstract.csv for which another patent of same family with english abstract and title was found.
+patents_not_en.csv - subset of applnids_notin_tls203_appln_abstr.csv and patents_not_en_abstract.csv for which no patent of same family with english abstract and title was found.
