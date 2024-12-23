@@ -33,3 +33,8 @@ dataconcat1.csv and dataconcat2.csv - data for which trying with a larger k to g
 
 10merged_data.csv - merged data 8similar_patents_with_techclasses.csv with dataconcat1.csv and dataconcat2.csv
 data204.csv - same as 9similar_patents_less_than1000.csv (corrected by reset index)
+
+11
+data_with_citations.csv - 10merged_data.csv with an additional column with cited patents
+data_no_citations.csv - patents in 10merged_data.csv for which citations were not found in sql database
+

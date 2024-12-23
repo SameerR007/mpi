@@ -16,3 +16,5 @@ the similarity between the embeddings of query and positive documents and query 
 7. 9similar_patents_less_than1000 : first checked if octamine has contrained patents wrt tech class or not. After confirming that there isnt any constrain in tech class for patents, retired to get similar patents with larger k for patents which we had unique similar patents less than 1000. At the end we have the patents for which no amount of k could get us more than 1000 unique patents.
 
 8. 10merged_data : modifying 8similar_patents_with_techclasses dataset such that number of unique family ids is greater than 1000 for all the patents. Patents for which number of unique family ids greater than 1000 was not achieved has been stored in a separate dataset for manual embedding. 
+
+9. 11data_with_citations - for the patents in 10merged_data.csv get the cited patents from sql database as these cited patents are the ground truth labels which should be closely related. Add one more column containg all the cited patent for a given representative patent. Also the patents for which the citations were not found are stored in data_no_citations.csv
