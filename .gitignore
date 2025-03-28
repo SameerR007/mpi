@@ -39,3 +39,20 @@ patents_not_en.csv
 
 14embeddings.pkl
 14embeddings.csv
+
+21error_ids.pkl
+21similar_patents_updated.pkl
+
+22patents_atleast1000.pkl
+22patents_NotFound.pkl
+22patents_lessthan1000.pkl
+
+23patents_lessthan1000.pkl
+23patents_atleast1000_2.pkl
+23patents_atleast1000_3.pkl
+23patents_atleast1000_4.pkl
+
+24all_patents_atleat1000.pkl
+
+25patents_with_citations.pkl
+25patents_no_citations.pkl
