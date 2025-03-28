@@ -58,3 +58,4 @@ patents_not_en.csv
 25patents_no_citations.pkl
 
 26noisy_patents.pkl
+26evaluated_data_logicmill.pkl
