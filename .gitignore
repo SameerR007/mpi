@@ -56,3 +56,5 @@ patents_not_en.csv
 
 25patents_with_citations.pkl
 25patents_no_citations.pkl
+
+26noisy_patents.pkl
