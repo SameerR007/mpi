@@ -66,7 +66,7 @@ Work related to older version of logic mill server. For updated version of logic
 Work related to updated version of logic mill server.
 
 ### 21. **similar_patents_byUpdatedLogicMill**
-- Retrieved similar patents for the representative patents from updated Logic Mill server and stored the family IDs of these similar patents.
+- Retrieved similar patents for the representative patents from updated Logic Mill server and stored the family IDs along with their similar patents.
 
 ### 22. **similar_patents_atleast1000**
 - Divided `21similar_patents_updated.pkl` dataset into two datasets with one having atleast 1000 unique similar patents and another with less than 1000 unique similar patents.
