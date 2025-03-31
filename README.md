@@ -6,9 +6,9 @@ The project primarily involves working with patents, embeddings, databases, and 
 
 This project aims to explore patents using machine learning and database queries, enabling better retrieval, embedding, and analysis of patent-related data. The repository includes scripts, and methodologies used to generate insights and analyze patent similarities.
 
-## Contents
+## Part 1
 
-The work is divided into 14 modules, each focusing on a specific aspect of the project:
+Work related to older version of logic mill server. For updated version of logic mill server see Part 2.
 
 ### 1. **sentence-transformers**
 - Experimenting with sentence transformers.
@@ -59,3 +59,29 @@ The work is divided into 14 modules, each focusing on a specific aspect of the p
 
 ### 14. **embedding**
 - Computed manual embeddings for patents with English abstracts and titles using Sentence Transformers.
+
+
+## Part 2
+
+Work related to updated version of logic mill server.
+
+### 21. **similar_patents_byUpdatedLogicMill**
+- Retrieved similar patents for the representative patents from updated Logic Mill server and stored the family IDs of these similar patents.
+
+### 22. **similar_patents_atleast1000**
+- Divided `21similar_patents_updated.pkl` dataset into two datasets with one having atleast 1000 unique similar patents and another with less than 1000 unique similar patents.
+
+### 23. **similar_patents_less_than1000**
+- Attempted to retrieve more similar patents with larger values of `k` for patents with fewer than 1,000 unique similar patents. The remaining patents (fewer than 1,000 unique matches) were stored separately.
+
+### 24. **all_patents_with_atleast1000**
+- Combined and stored all the patents for which we were able to fetch atleast 1000 unique similar patents for evaluation.
+
+### 25. **data_with_citations**
+- Retrieved cited patents for patents in `24all_patents_atleat1000.pkl` from the SQL database. These cited patents serve as ground truth labels for close relationships.
+- Added a column containing all cited patents for each representative patent.
+- Stored patents without citations in `25patents_no_citations.pkl`.
+
+### 26. **26evaluation_logicmill**
+- Performed evaluation for our final dataset (`25patents_with_citations.pkl`) and stored the result in `26evaluated_data_logicmill.pkl`
+- Metrics used - MRR@10, MAP@1000 and RFR@1000

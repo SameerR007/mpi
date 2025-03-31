@@ -116,3 +116,59 @@ This folder contains various datasets generated and used throughout the project.
 
 ### **14embeddings.pkl** and **14embeddings.csv**
 **Description**: Contain embeddings of patents with English abstracts and titles.
+
+---
+
+### **21similar_patents_updated.pkl**
+**docdb_family_id**
+**similar_patents**: Family IDs of similar patents.
+
+### **21error_ids.pkl**
+**Description**: List of family ids of representative patents for which logic mill gave error when fetching.
+
+---
+
+### **22patents_atleast1000.pkl**
+**Description**: Subset of `21similar_patents_updated.pkl` with only the patents for which unique similar patents were atleast 1000.
+
+### **22patents_NotFound.pkl**
+**Description**: `21error_ids.pkl` in dataframe format
+
+### **22patents_lessthan1000.pkl**
+**Description**: Subset of `21similar_patents_updated.pkl` with only the patents for which unique similar patents were less than 1000.
+
+---
+
+### **23patents_lessthan1000.pkl**
+**Description**: Subset of `22patents_lessthan1000.pkl` for which unique similar patents were less than 1000 irrespective of how high the k was.
+
+---
+
+### **24all_patents_atleat1000.pkl**
+**Description**: All the patents combined for which unique similar patents are atleast 1000
+**Columns:**
+**docdb_family_id**
+**similar_patents**: Family IDs of similar patents.
+
+---
+
+### **25patents_with_citations.pkl**
+**Description**: Contains data from `24all_patents_atleat1000.pkl` with an additional column for cited patents.
+
+### **25patents_no_citations.pkl**
+**Description**: Subest of `24all_patents_atleat1000.pkl` for which no citations were found in sql datadase.
+
+---
+
+### 26. **26noisy_patents.pkl**
+**Description**: ids for which there were noisy (random strings) in similar patents. 
+
+### 26. **26evaluated_data_logicmill.pkl**
+**Description**: Evaluation on `25patents_with_citations.pkl`
+**Columns:**
+**docdb_family_id**
+**similar_patents**: Family IDs of similar patents.
+**cited_docdb_family_id**: list of citations
+**MRR@10**: Mean reciprocal rank value
+**MAP@1000**: Mean Absolute precision value
+**RFR@1000**: Rank first relavent value
