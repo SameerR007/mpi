@@ -148,6 +148,7 @@ This folder contains various datasets generated and used throughout the project.
 
 ### **24all_patents_atleat1000.pkl**
 **Description**: All the patents combined for which unique similar patents are atleast 1000
+
 **Columns:**
 - **docdb_family_id**
 - **similar_patents**: Family IDs of similar patents.
@@ -167,6 +168,7 @@ This folder contains various datasets generated and used throughout the project.
 
 ### 26. **26evaluated_data_logicmill.pkl**
 **Description**: Evaluation on `25patents_with_citations.pkl`
+
 **Columns:**
 - **docdb_family_id**
 - **similar_patents**: Family IDs of similar patents.
