@@ -120,6 +120,7 @@ This folder contains various datasets generated and used throughout the project.
 ---
 
 ### **21similar_patents_updated.pkl**
+
 **Columns:**
 - **docdb_family_id**
 - **similar_patents**: Family IDs of similar patents.
