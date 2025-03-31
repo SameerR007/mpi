@@ -79,7 +79,7 @@ This folder contains various datasets generated and used throughout the project.
 
 ---
 
-### **11data_with_citations.csv**
+### **data_with_citations.csv**
 **Description**: Contains data from `10merged_data.csv` with an additional column for cited patents.
 
 ### **data_no_citations.csv**
