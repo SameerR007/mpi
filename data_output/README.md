@@ -120,8 +120,9 @@ This folder contains various datasets generated and used throughout the project.
 ---
 
 ### **21similar_patents_updated.pkl**
-**docdb_family_id**
-**similar_patents**: Family IDs of similar patents.
+**Columns:**
+- **docdb_family_id**
+- **similar_patents**: Family IDs of similar patents.
 
 ### **21error_ids.pkl**
 **Description**: List of family ids of representative patents for which logic mill gave error when fetching.
@@ -147,8 +148,8 @@ This folder contains various datasets generated and used throughout the project.
 ### **24all_patents_atleat1000.pkl**
 **Description**: All the patents combined for which unique similar patents are atleast 1000
 **Columns:**
-**docdb_family_id**
-**similar_patents**: Family IDs of similar patents.
+- **docdb_family_id**
+- **similar_patents**: Family IDs of similar patents.
 
 ---
 
@@ -166,9 +167,9 @@ This folder contains various datasets generated and used throughout the project.
 ### 26. **26evaluated_data_logicmill.pkl**
 **Description**: Evaluation on `25patents_with_citations.pkl`
 **Columns:**
-**docdb_family_id**
-**similar_patents**: Family IDs of similar patents.
-**cited_docdb_family_id**: list of citations
-**MRR@10**: Mean reciprocal rank value
-**MAP@1000**: Mean Absolute precision value
-**RFR@1000**: Rank first relavent value
+- **docdb_family_id**
+- **similar_patents**: Family IDs of similar patents.
+- **cited_docdb_family_id**: list of citations
+- **MRR@10**: Mean reciprocal rank value
+- **MAP@1000**: Mean Absolute precision value
+- **RFR@1000**: Rank first relavent value
